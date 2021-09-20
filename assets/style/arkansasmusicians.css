@@ -1,10 +1,23 @@
 CSS File
 
+/* Applies to the entire body of the HTML document (except where overridden by more specific
+selectors). */
 body {
-background-color: blue;
+  margin: 25px;
+  background-color: rgb(240,240,240);
+  font-family: arial, sans-serif;
+  font-size: 14px;
 }
-style {
 
+/* Applies to all <h1>...</h1> elements. */
+h1 {
+  font-size: 35px;
+  font-weight: normal;
+  margin-top: 5px;
 }
-h1 {color:blue; font:arial; font-size:12px;  
-}
+
+/* Applies to all elements with <... class="someclass"> specified. */
+.someclass { color: red; }
+
+/* Applies to the element with <... id="someid"> specified. */
+#someid { color: green; }
