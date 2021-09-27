@@ -1,5 +1,10 @@
 /* Applies to the entire body of the HTML document (except where overridden by more specific
 selectors). */
+html {
+  box-sizing: border-box;
+  padding: 10px 5% 2em 10%;
+}
+
 body {
   margin: 25px;
   background-color: blue;
