@@ -17,7 +17,7 @@
 <!-- Navigation (Stays on Top) -->
 <div class="tab">
 <a href="https://richfaulkner.github.io/arkansasmusicians/">Home</a>
-<a href="page_1/index.html">Artists</a>
+<a href="artists/index.html">Artists</a>
 </div>
             <div id="Home" class="tabcontent">
                 <br>
@@ -31,100 +31,6 @@ Johnny Cash to Elvis Presley, many have ties to this wonderful state.</p>
 <p>Enjoy your searching and thanks for visiting.</p>  
             <img src="assets/images/musicnote.png" alt="Music Note">
             </div>
-            <div id="Artists" class="tabcontent">
-                <p> <a href="Page 1/index.html">Ronnie Hawkins</a></p>
-                <p> <a href="Page 2/index.html">Point of Grace</a></p>
-                <p> <a href="Page 2/index.html">Lefty Frizzell</a></p>
-                <p> <a href="Page 2/index.html">K. T. Oslin</a></p>
-                <p> <a href="Page 2/index.html">Jim Ed Brown</a></p>
-                <p> <a href="Page 2/index.html">Michael Burks</a></p>
-                <p> <a href="Page 2/index.html">Muthas Day out</a></p>
-                <p> <a href="Page 2/index.html">Pharoah Sanders</a></p>
-                <p> <a href="Page 2/index.html">Collin Raye</a></p>
-                <p> <a href="Page 2/index.html">Jimmue Driftwood</a></p>
-                <p> <a href="Page 2/index.html">Joe Nichols</a></p>
-                <p> <a href="Page 2/index.html">Kris Allen</a></p>
-                <p> <a href="Page 2/index.html">Billy Bob Thorton</a></p>
-                <p> <a href="Page 2/index.html">Ne-Yo</a></p>
-                <p> <a href="Page 2/index.html">Charlie Rich</a></p>
-                <p> <a href="Page 2/index.html">Black Oak Arkansas</a></p>
-                <p> <a href="Page 2/index.html">Justin Moore</a></p>
-                <p> <a href="Page 2/index.html">Tracy Lawrence</a></p>
-                <p> <a href="Page 2/index.html">Levon Helm</a></p>
-                <p> <a href="Page 2/index.html">Evanescence</a></p>
-                <p> <a href="Page 2/index.html">Amy Lee</a></p>
-                <p> <a href="Page 2/index.html">Conway Twitty</a></p>
-                <p> <a href="Page 2/index.html">Glen Campbell</a></p>
-                <p> <a href="Page 2/index.html">Johnny Cash</a></p>
-                <p> <a href="Page 2/index.html">Al Green</a></p>
-                <p> <a href="Page 2/index.html">B.B. King</a></p>
-      </div>
-            
-    <h2>Artist Banner</h2>
-    <img id="artistbanner">
-    <h2>Artist Biography</h2>
-    <div id="biography"></div>
-    <h2>Album List</h2>
-    <div id="albumlist"></div>
-    <h2>First Album Tracks</h2>
-    <div id="tracklist"></div>
-<script>
-async function search() {
-
-    // Artist Data
-    // Get the artist name from the textbox; encode the artist name in case there are special characters
-    artistSearchValue = encodeURI(document.getElementById("artist").value);
-    // Create the search URL; Note we are using 1 as the apikey
-    artistSearchURL = "https://theaudiodb.com/api/v1/json/1/search.php?s=" + artistSearchValue;
-    // AJAX call to fetch the data
-    artistObject = await fetch(artistSearchURL);
-    artistJSONText = await artistObject.text();
-    // Parse the JSON string into an object
-    artistData = JSON.parse(artistJSONText);
-    // Display the biography data - Note we display the first result - 0 index
-    document.getElementById("biography").innerHTML = artistData.artists[0].strBiographyEN;
-    // Display the artist picture - Note we display the first result - 0 index; use "/preview" for smaller image
-    document.getElementById("artistbanner").src = artistData.artists[0].strArtistBanner + "/preview";
-
-    // Album Data - Get the first Album
-    // Get the artist ID from the artist data object; encode the artist ID in case there are special characters
-    albumSearchValue = encodeURI(artistData.artists[0].idArtist);
-    // Create the search URL; Note we are using 1 as the apikey
-    albumSearchURL = "https://theaudiodb.com/api/v1/json/1/album.php?i=" + albumSearchValue;
-    // AJAX call to fetch the data
-    albumObject = await fetch(albumSearchURL);
-    albumJSONText = await albumObject.text();
-    // Parse the JSON string into an object
-    albumData = JSON.parse(albumJSONText);
-    // Loop through the albums
-    albumList = "";
-    for (i = 0; i < albumData.album.length; i++) {
-        albumList = albumList + albumData.album[i].strAlbum + " (" + albumData.album[i].intYearReleased + ")" + "<br>";
-    }
-    // Display the album names
-    document.getElementById("albumlist").innerHTML = albumList;
-
-    // Track Data - Get the tracks for the first album
-    // Get the album ID from the artist data object; encode the album ID in case there are special characters
-    trackSearchValue = encodeURI(albumData.album[0].idAlbum);
-    // Create the search URL; Note we are using 1 as the apikey
-    trackSearchURL = "https://theaudiodb.com/api/v1/json/1/track.php?m=" + trackSearchValue;
-    // AJAX call to fetch the data
-    trackObject = await fetch(trackSearchURL);
-    trackJSONText = await trackObject.text();
-    // Parse the JSON string into an object
-    trackData = JSON.parse(trackJSONText);     
-    trackList = "";
-    for (i = 0; i < trackData.track.length; i++) {
-        trackList = trackList + trackData.track[i].strTrack + "<br>";
-    }
-    // Display the track names for first album
-    document.getElementById("tracklist").innerHTML = trackList;
-}
-            </script>
-     </div>
-  </div>
-    <script type="text/javascript" src="assets/scripts/index.js"></script>
             
   </body>
 </html>
