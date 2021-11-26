@@ -1,1 +1,35 @@
-.
+/* Applies to the entire body of the HTML document (except where overridden by more specific
+selectors). */
+html {
+  box-sizing: border-box;
+  padding: 10px 5% 2em 10%;
+}
+
+body {
+  margin: 25px;
+  background-color: LightGray;
+  font-family: arial, sans-serif;
+  font-size: 18px;
+}
+
+/* Applies to all <h1>...</h1> elements. */
+h1 {
+  color: maroon;
+  font-size: 35px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+p {
+  color: black;
+  font-size: 18px;
+  font-weight: normal;
+  margin-left; 10px;
+  margin-right; 10px;
+}
+
+/* Applies to all elements with <... class="someclass"> specified. */
+.someclass { color: red; }
+
+/* Applies to the element with <... id="someid"> specified. */
+#someid { color: green; }
