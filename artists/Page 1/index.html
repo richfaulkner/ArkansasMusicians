@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +7,7 @@
 </head>
 <body>
 	<h1>Artist Information</h1>
-	<id="artist">
+	<p id="artist"> </p>
     <h2>Artist Banner</h2>
     <img id="artistbanner">
     <h2>Artist Biography</h2>
@@ -19,9 +20,7 @@
 <script>
 async function search() {
 
-    artist = Ronnie Hawkins;
-    // Get the artist name from the textbox; encode the artist name in case there are special characters
-    artistSearchValue = encodeURI(document.getElementById("artist").value);
+    
     // Create the search URL; Note we are using 1 as the apikey
     artistSearchURL = "https://theaudiodb.com/api/v1/json/1/search.php?s=Ronnie Hawkins";
     // AJAX call to fetch the data
