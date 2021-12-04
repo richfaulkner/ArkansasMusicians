@@ -6,25 +6,25 @@
 	<title>Artist Information</title>
 </head>
 <body>
-	<h1>Artist Information</h1>
-	<id="artist">
-	<button onclick="search();">Search</button><br><br>
-    <h2>Artist Banner</h2>
-    <img id="artistbanner">
-    <h2>Artist Biography</h2>
-    <div id="biography"></div>
-    <h2>Album List</h2>
-    <div id="albumlist"></div>
-    <h2>First Album Tracks</h2>
-    <div id="tracklist"></div>
+<h1>Artist Information</h1>
+<input type="text" id="artist">
+<button onclick="search();">Search</button><br><br>
+<h2>Artist Banner</h2>
+<img id="artistbanner">
+<h2>Artist Biography</h2>
+<div id="biography"></div>
+<h2>Album List</h2>
+<div id="albumlist"></div>
+<h2>First Album Tracks</h2>
+<div id="tracklist"></div>
 	
 <script>
 async function search() {
 
     // Define the artist;
-	artist = Ronnie Hawkins
-	//Create the artist search value;
-	artistSearchValue = encodeURI(document.getElementById("artist").value);
+    artist = Ronnie Hawkins
+    //Create the artist search value;
+    artistSearchValue = encodeURI(document.getElementById("artist").value);
     // Create the search URL; 
     artistSearchURL = "https://theaudiodb.com/api/v1/json/2/search.php?s=" + artistSearchValue;
     // AJAX call to fetch the data
