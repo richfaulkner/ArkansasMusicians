@@ -23,7 +23,7 @@ async function getText() {
     // Get the artist name from the textbox; encode the artist name in case there are special characters
     artistSearchValue = encodeURI(document.getElementById("artist").value);
     // Create the search URL; Note we are using 1 as the apikey
-    artistSearchURL = "https://theaudiodb.com/api/v1/json/1/search.php?s=" + artistSearchValue;
+    artistSearchURL = "https://theaudiodb.com/api/v1/json/1/search.php?s=" + Ronnie Hawkins;
     // AJAX call to fetch the data
     artistObject = await fetch(artistSearchURL);
     artistJSONText = await artistObject.text();
