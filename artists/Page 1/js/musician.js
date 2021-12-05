@@ -1,7 +1,7 @@
     async function search() {
 
     // AJAX call to fetch the data
-    artistObject = await fetch(‘https://theaudiobd.com/api/v1/json/523532/search.php?s=coldplay’);
+    artistObject = await fetch(‘https://theaudiodb.com/api/v1/json/523532/search.php?s=coldplay’);
     artistJSONText = await artistObject.text();
     // Parse the JSON string into an object
     artistData = JSON.parse(artistJSONText);
