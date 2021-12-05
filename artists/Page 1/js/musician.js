@@ -1,11 +1,8 @@
-<script>
 async function search() {
 
-    // Artist Data
-    // Get the artist name from the textbox; encode the artist name in case there are special characters
-    artistSearchValue = encodeURI(document.getElementById("artist").value);
-    // Create the search URL; Note we are using 1 as the apikey
-    artistSearchURL = "https://theaudiodb.com/api/v1/json/1/search.php?s=" + artistSearchValue;
+    
+    // Create the search URL
+    artistSearchURL = "https://theaudiodb.com/api/v1/json/523532/search.php?s=coldplay;
     // AJAX call to fetch the data
     artistObject = await fetch(artistSearchURL);
     artistJSONText = await artistObject.text();
@@ -19,8 +16,8 @@ async function search() {
     // Album Data - Get the first Album
     // Get the artist ID from the artist data object; encode the artist ID in case there are special characters
     albumSearchValue = encodeURI(artistData.artists[0].idArtist);
-    // Create the search URL; Note we are using 1 as the apikey
-    albumSearchURL = "https://theaudiodb.com/api/v1/json/1/album.php?i=" + albumSearchValue;
+    // Create the search URL; 
+    albumSearchURL = "https://theaudiodb.com/api/v1/json/523532/album.php?i=" + albumSearchValue;
     // AJAX call to fetch the data
     albumObject = await fetch(albumSearchURL);
     albumJSONText = await albumObject.text();
@@ -37,8 +34,8 @@ async function search() {
     // Track Data - Get the tracks for the first album
     // Get the album ID from the artist data object; encode the album ID in case there are special characters
     trackSearchValue = encodeURI(albumData.album[0].idAlbum);
-    // Create the search URL; Note we are using 1 as the apikey
-    trackSearchURL = "https://theaudiodb.com/api/v1/json/1/track.php?m=" + trackSearchValue;
+    // Create the search URL; 
+    trackSearchURL = "https://theaudiodb.com/api/v1/json/523532/track.php?m=" + trackSearchValue;
     // AJAX call to fetch the data
     trackObject = await fetch(trackSearchURL);
     trackJSONText = await trackObject.text();
@@ -51,4 +48,3 @@ async function search() {
     // Display the track names for first album
     document.getElementById("tracklist").innerHTML = trackList;
 }
-            </script>
