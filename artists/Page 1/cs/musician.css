@@ -1,4 +1,5 @@
 html {
+  border: 5px solid black; 
   box-sizing: border-box;
   padding: 10px 5% 2em 10%;
 }
