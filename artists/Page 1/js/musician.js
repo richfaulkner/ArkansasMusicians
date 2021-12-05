@@ -1,5 +1,6 @@
-async function search() {
-
+fetch(‘https://theaudiobd.com/api/v1/json/523532/search.php?s=coldplay’)
+   .then(response => response.json())
+   .then(artists => showArtist(artists.results));
     
     // Create the search URL
     artistSearchURL = "https://theaudiodb.com/api/v1/json/523532/search.php?s=coldplay;
