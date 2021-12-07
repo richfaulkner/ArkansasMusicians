@@ -1,4 +1,4 @@
-    async function search() {
+    async function search(artist) {
 
     // AJAX call to fetch the data
     artistObject = await fetch(‘https://theaudiodb.com/api/v1/json/523532/search.php?s=coldplay’);
