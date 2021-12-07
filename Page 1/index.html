@@ -17,18 +17,10 @@
     <div id="tracklist"></div>
 	
 <script>
-async function search () {
-
-    // AJAX call to fetch the data
-    artistObject = await fetch(‘https://theaudiodb.com/api/v1/json/523532/search.php?s=coldplay’);
-    artistJSONText = await artistObject.text();
-    // Parse the JSON string into an object
-    artistData = JSON.parse(artistJSONText);
-    // Display the biography data - Note we display the first result - 0 index
-    document.getElementById("biography").innerHTML = artistData.artists[0].strBiographyEN;
-    // Display the artist picture - Note we display the first result - 0 index; use "/preview" for smaller image
-    document.getElementById("artistbanner").src = artistData.artists[0].strArtistBanner + "/preview";
-}
+fetch (‘https://theaudiodb.com/api/v1/json/523532/search.php?s=coldplay’);
+   .then(response => response.json())
+   .then(artist => showArtists(artists.results));
+	
             </script>
       </body>
 </html>
