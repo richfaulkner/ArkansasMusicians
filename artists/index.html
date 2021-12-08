@@ -46,7 +46,7 @@
 
       
        <script>
-   async function search() {
+   function search() {
    
     // Artist Data
     // Select Artist from the dropbox; encode the artist name in case there are special characters
@@ -54,8 +54,8 @@
     // Create the search URL; APIKEY = 523532
     artistSearchURL = "https://theaudiodb.com/api/v1/json/523532/search.php?s=" + artistSearchValue;
     // AJAX call to fetch the data
-    artistObject = await fetch(artistSearchURL);
-    artistJSONText = await artistObject.text();
+    artistObject = fetch(artistSearchURL);
+    artistJSONText = artistObject.text();
     // Parse the JSON string into an object
     artistData = JSON.parse(artistJSONText);
     // Display the biography data - Note we display the first result - 0 index
