@@ -16,32 +16,32 @@
        <p>Select an artist from the dropdown list.</p>
 <p>Click the "Submit" button to see information about the selected Artist.</p>
   <label for="artist">Choose an Artist:</label>
-  <select type="text" id="artist">
-      <option value="ronnie_hawkins">Ronnie Hawkins</option>
-      <option value="point_of_grace">Point of Grace</option>
-      <option value="lefty_frizzell">Lefty Frizzell</option>
-      <option value="michael_burks">Michael Burks</option>
-      <option value="Pharoah_sanders">Pharoah Sanders</option>
-      <option value="collin_raye">Collin Raye</option>
-      <option value="jimmie_driftwood">Jimmie Driftwood</option>
-      <option value="joe_nichols">Joe Nichols</option>
-      <option value="elvis_presley">Elvis Presley</option>
-      <option value="kris_allen">Kris Allen</option>
-      <option value="billy_bob_thorton">Billy Bob Thorton</option>
-      <option value="Ne-Yo">Ne-Yo</option>
-      <option value="charlie_rich">Charlie Rich</option>
-      <option value="black_oak_arkansas">Black Oak Arkansas</option>
-      <option value="Justin_Moore">Justin Moore</option>
-      <option value="Tracy_Lawrence">Tracy Lawrence</option>
-      <option value="Levon_Helm">Levon Helm</option>
-      <option value="Evanescence">Evanescence</option>
-      <option value="Conway_Twitty">Conway Twitty</option>
-      <option value="Glen_Campbell">Glen Campbell</option>
-      <option value="Johnny_Cash">Johnny Cash</option>
-      <option value="Al_Green">Al Green</option>
-      <option value="B.B._King">B.B. King</option>
+  <select id="artist">
+      <option>Ronnie Hawkins</option>
+      <option>Point of Grace</option>
+      <option>Lefty Frizzell</option>
+      <option>Michael Burks</option>
+      <option>Pharoah Sanders</option>
+      <option>Collin Raye</option>
+      <option>Jimmie Driftwood</option>
+      <option>Joe Nichols</option>
+      <option>Elvis Presley</option>
+      <option>Kris Allen</option>
+      <option>Billy Bob Thorton</option>
+      <option>Ne-Yo</option>
+      <option>Charlie Rich</option>
+      <option>Black Oak Arkansas</option>
+      <option>Justin Moore</option>
+      <option>Tracy Lawrence</option>
+      <option>Levon Helm</option>
+      <option>Evanescence</option>
+      <option>Conway Twitty</option>
+      <option>Glen Campbell</option>
+      <option>Johnny Cash</option>
+      <option>Al Green</option>
+      <option>B.B. King</option>
   </select>
-       <button onclick="search();">Search</button><br><br>
+       <button onclick="search();">Submit</button><br><br>
   
 
       
@@ -50,7 +50,7 @@ async function search() {
 
     // Artist Data
     // Select Artist from the dropbox; encode the artist name in case there are special characters
-    artistSearchValue = (document.getElementById("artist").value);
+    artistSearchValue = encodeURI(document.getElementById("artist").value);
     // Create the search URL; APIKEY = 523532
     artistSearchURL = "https://theaudiodb.com/api/v1/json/523532/search.php?s=" + artistSearchValue;
     // AJAX call to fetch the data
