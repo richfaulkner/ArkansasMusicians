@@ -17,36 +17,34 @@
 <p>Click the "Submit" button to see information about the selected Artist.</p>
   <label for="artist">Choose an Artist:</label>
   <select id="artist">
-      <option>Ronnie Hawkins</option>
-      <option>Point of Grace</option>
-      <option>Lefty Frizzell</option>
-      <option>Michael Burks</option>
-      <option>Pharoah Sanders</option>
-      <option>Collin Raye</option>
-      <option>Jimmie Driftwood</option>
-      <option>Joe Nichols</option>
-      <option>Elvis Presley</option>
-      <option>Kris Allen</option>
-      <option>Billy Bob Thorton</option>
+      <option>Ronnie_Hawkins</option>
+      <option>Point_of_Grace</option>
+      <option>Lefty_Frizzell</option>
+      <option>Michael_Burks</option>
+      <option>Pharoah_Sanders</option>
+      <option>Collin_Raye</option>
+      <option>Jimmie_Driftwood</option>
+      <option>Joe_Nichols</option>
+      <option>Elvis_Presley</option>
+      <option>Kris_Allen</option>
+      <option>Billy_Bob_Thorton</option>
       <option>Ne-Yo</option>
-      <option>Charlie Rich</option>
-      <option>Black Oak Arkansas</option>
-      <option>Justin Moore</option>
-      <option>Tracy Lawrence</option>
-      <option>Levon Helm</option>
+      <option>Charlie_Rich</option>
+      <option>Black_Oak_Arkansas</option>
+      <option>Justin_Moore</option>
+      <option>Tracy_Lawrence</option>
+      <option>Levon_Helm</option>
       <option>Evanescence</option>
-      <option>Conway Twitty</option>
-      <option>Glen Campbell</option>
-      <option>Johnny Cash</option>
-      <option>Al Green</option>
-      <option>B.B. King</option>
+      <option>Conway_Twitty</option>
+      <option>Glen_Campbell</option>
+      <option>Johnny_Cash</option>
+      <option>Al_Green</option>
+      <option>B._B._King</option>
   </select>
-       <input type="button" onclick="search();" value="Submit"><br><br>
-  
-
-      
+       <button onclick="search();">Search</button><br><br>
+        
        <script>
-   function search() {
+  async function search() {
    
     // Artist Data
     // Select Artist from the dropbox; encode the artist name in case there are special characters
@@ -54,8 +52,8 @@
     // Create the search URL; APIKEY = 523532
     artistSearchURL = "https://theaudiodb.com/api/v1/json/523532/search.php?s=" + artistSearchValue;
     // AJAX call to fetch the data
-    artistObject = fetch(artistSearchURL);
-    artistJSONText = artistObject.text();
+    artistObject = await fetch(artistSearchURL);
+    artistJSONText = await artistObject.text();
     // Parse the JSON string into an object
     artistData = JSON.parse(artistJSONText);
     // Display the biography data - Note we display the first result - 0 index
