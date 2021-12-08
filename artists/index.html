@@ -41,13 +41,13 @@
       <option>Al Green</option>
       <option>B.B. King</option>
   </select>
-       <button onclick="search();">Submit</button><br><br>
+       <input type="button" onclick="getArtist();">Submit</button><br><br>
   
 
       
        <script>
-async function search() {
-
+   function getArtist() {
+   
     // Artist Data
     // Select Artist from the dropbox; encode the artist name in case there are special characters
     artistSearchValue = encodeURI(document.getElementById("artist").value);
