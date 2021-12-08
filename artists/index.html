@@ -11,16 +11,10 @@
     <link rel="stylesheet" href="assets/Style/musician.css">
 </head>
     <body>
-  <h1>Artists</h1>
         
-  <h2>Artist Banner</h2>
-    <img id="artistbanner">
-    <h2>Artist Biography</h2>
-    <div id="biography"></div>
-    <h2>Album List</h2>
-    <div id="albumlist"></div>
-    <h2>First Album Tracks</h2>
-    <div id="tracklist"></div>
+  <h1>Artists</h1>
+        <a href="https://richfaulkner.github.io/arkansasmusicians/">Home</a>
+  
        <p>Select an artist from the dropdown list.</p>
 <p>Click the "Submit" button to see information about the selected Artist.</p>
   <label for="artist">Choose an Artist:</label>
@@ -50,7 +44,18 @@
       <option>B._B._King</option>
   </select>
        <button onclick="search();">Search</button><br><br>
-        
+  <h2>Artist Banner</h2>
+    <img id="artistbanner">
+        <h2>Artist Image</h2>
+        <img id-"artistimage">
+    <h2>Artist Origins</h2>
+        <div id=origins</div>
+    <h2>Artist Biography</h2>
+    <div id="biography"></div>
+    <h2>Album List</h2>
+    <div id="albumlist"></div>
+    <h2>First Album Tracks</h2>
+    <div id="tracklist"></div>      
        <script>
   async function search() {
    
@@ -66,9 +71,12 @@
     artistData = JSON.parse(artistJSONText);
     // Display the biography data - Note we display the first result - 0 index
     document.getElementById("biography").innerHTML = artistData.artists[0].strBiographyEN;
+    //Display where the artist is from
+    document.getElementById("origins").innerHTML = artistData.artists[0].srtCountry;
     // Display the artist picture - Note we display the first result - 0 index; use "/preview" for smaller image
     document.getElementById("artistbanner").src = artistData.artists[0].strArtistBanner + "/preview";
-
+    document.getElementById("artistimage").src = artistData.artists[0].strArtistThumb +"/preview";
+      
     // Album Data - Get the first Album
     // Get the artist ID from the artist data object; encode the artist ID in case there are special characters
     albumSearchValue = encodeURI(artistData.artists[0].idArtist);
@@ -86,6 +94,7 @@
     }
     // Display the album names
     document.getElementById("albumlist").innerHTML = albumList;
+     
 
     // Track Data - Get the tracks for the first album
     // Get the album ID from the artist data object; encode the album ID in case there are special characters
@@ -103,6 +112,7 @@
     }
     // Display the track names for first album
     document.getElementById("tracklist").innerHTML = trackList;
+      
 }
 </script>
   </body>
