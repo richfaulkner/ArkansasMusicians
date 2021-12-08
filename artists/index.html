@@ -17,14 +17,15 @@
 
   <label for="artist">Choose an Artist:</label>
   <select name="artist" id="artists">
-     <option value="ronnie_hawkins">Ronnie Hawkins</option>
+      <option value="ronnie_hawkins">Ronnie Hawkins</option>
       <option value="point_of_grace">Point of Grace</option>
-      <option value="lefty_frizzell"></option>
-      <option value="michael_burks"></option>
-      <option value="Pharoah_sanders"></option>
-      <option value="collin_raye"></option>
-      <option value="jimmie_driftwood"></option>
+      <option value="lefty_frizzell">Lefty Frizzell</option>
+      <option value="michael_burks">Michael Burks</option>
+      <option value="Pharoah_sanders">Pharoah Sanders</option>
+      <option value="collin_raye">Collin Raye</option>
+      <option value="jimmie_driftwood">Jimmie Driftwood</option>
       <option value="joe_nichols">Joe Nichols</option>
+      <option value="elvis_presley">Elvis Presley</option>
       <option value="kris_allen">Kris Allen</option>
       <option value="billy_bob_thorton">Billy Bob Thorton</option>
       <option value="Ne-Yo">Ne-Yo</option>
@@ -40,13 +41,12 @@
       <option value="Al_Green">Al Green</option>
       <option value="B.B._King">B.B. King</option>
   </select>
-  <br><br>
-  <input type="submit" value="Submit">
-
+       <button onclick="search();">Search</button><br><br>
+  
 <p>Click the "Submit" button to see information about the selected Artist.</p>
       
        <script>
-async function submit() {
+async function search () {
 
     // Artist Data
     // Select Artist from the dropbox; encode the artist name in case there are special characters
