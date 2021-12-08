@@ -16,7 +16,7 @@
        <p>Select an artist from the dropdown list.</p>
 
   <label for="artist">Choose an Artist:</label>
-  <select name="artist" id="artists">
+  <select id="artists">
       <option value="ronnie_hawkins">Ronnie Hawkins</option>
       <option value="point_of_grace">Point of Grace</option>
       <option value="lefty_frizzell">Lefty Frizzell</option>
@@ -51,8 +51,8 @@ async function search () {
     // Artist Data
     // Select Artist from the dropbox; encode the artist name in case there are special characters
     artistSearchValue = encodeURI(document.getElementById("artist").value);
-    // Create the search URL; Note we are using 2 as the apikey
-    artistSearchURL = "https://theaudiodb.com/api/v1/json/2/search.php?s=" + artistSearchValue;
+    // Create the search URL; APIKEY = 523532
+    artistSearchURL = "https://theaudiodb.com/api/v1/json/523532/search.php?s=" + artistSearchValue;
     // AJAX call to fetch the data
     artistObject = await fetch(artistSearchURL);
     artistJSONText = await artistObject.text();
