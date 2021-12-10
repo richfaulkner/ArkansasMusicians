@@ -1,6 +1,7 @@
 /* Applies to the entire body of the HTML document (except where overridden by more specific
 selectors). */
 html {
+  border: 5px solid black;
   box-sizing: border-box;
   width: 80%;
   border: solid #;
