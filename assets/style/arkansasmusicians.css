@@ -33,7 +33,9 @@ html {
 .topnav a.active {
   background-color: #04AA6D;
   color: white;
-}body {
+}
+
+body {
   margin: 25px;
   background-color: LightGray;
   font-family: arial, sans-serif;
