@@ -2,25 +2,24 @@
 <head>
     <meta charset="UTF-8">
  	<meta name="description" content="Artist Information">
-	<title>Artist Information</title>
+	<title>Contact Information</title>
 </head>
 <body>
-	<h1>Artist Information</h1>
+	<h1>About this site</h1>
+	<!-- Navigation (Stays on Top) -->
+        <div class="topnav">
+    
+        <a class="active" href="https://richfaulkner.github.io/arkansasmusicians/">Home</a>
+        <a href="https://richfaulkner.github.io/arkansasmusiciansartists/artists">Artists</a>
+        <a href="https://richfaulkner.github.io/arkansasmusicians/page 1/">About</a>
+  </div>
 	
-    <h2>Artist Banner</h2>
-    <img id="artistbanner">
-    <h2>Artist Biography</h2>
-    <div id="biography"></div>
-    <h2>Album List</h2>
-    <div id="albumlist"></div>
-    <h2>First Album Tracks</h2>
-    <div id="tracklist"></div>
+	    
+	<p>This site is populated by use of <a href="https://theaudiodb.com">The Audio DB web-based database.</a></p>
+	<br>
+	<p>The Audio DB is a free web based data base. It is user populated with open source information. You can search many artists from all over. It is not limited to Arkansas artists.</p>
+        <br>
+	<p>This site was requested by the Arkansas Economic Development Commission. It is used to promote Musicians in our great state.</p>
 	
-<script>
-fetch (‘https://theaudiodb.com/api/v1/json/523532/search.php?s=coldplay’);
-   .then(response => response.json())
-   .then(artist => showArtists(artists.results));
-	
-            </script>
-      </body>
+         </body>
 </html>
